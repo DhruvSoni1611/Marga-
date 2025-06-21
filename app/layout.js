@@ -36,9 +36,9 @@ export default function RootLayout({ children }) {
             >
               {/* {header} */}
               <Header />
-              <main className="min-h-screen">{children}</main>
+              <main className="min-h-screen pt-15">{children}</main>
               {/* {footer} */}
-              <footer className="bg-muted/80 py-8">
+              <footer className="bg-muted/80 mt-10 py-8">
                 <div className="container mx-auto px-4 text-center text-gray-200">
                   <p>© Copyrights. Terms and Conditions</p>
                 </div>

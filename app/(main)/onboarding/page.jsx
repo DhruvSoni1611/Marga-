@@ -1,7 +1,19 @@
-import React from "react";
+import { redirect } from "next/navigation";
+import { industries } from "@/data/industries";
+import OnboardingForm from "./_components/onboarding-form";
+import { getUserOnboardingStatus } from "@/actions/user";
 
-const Onboarding = () => {
-  return <div>Onboarding</div>;
-};
+export default async function OnboardingPage() {
+  // Check if user is already onboarded
+  const { isOnboarded } = await getUserOnboardingStatus();
 
-export default Onboarding;
+  if (isOnboarded) {
+    redirect("/dashboard");
+  }
+
+  return (
+    <main>
+      <OnboardingForm industries={industries} />
+    </main>
+  );
+}
