@@ -52,26 +52,26 @@ export default async function Header() {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link href={"/resume"} className="flex items-center gap-2">
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="/resume" className="flex items-center gap-2">
                     <FileText className="h-4 w-4" />
-                    <span className="hidden md:block">Build Resume</span>
+                    Build Resume
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem asChild>
                   <Link
-                    href={"/cover-letter"}
+                    href="/cover-letter"
                     className="flex items-center gap-2"
                   >
                     <PenBox className="h-4 w-4" />
-                    <span className="hidden md:block">AI - Cover Letter</span>
+                    AI - Cover Letter
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href={"/interview"} className="flex items-center gap-2">
+                <DropdownMenuItem asChild>
+                  <Link href="/interview" className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
-                    <span className="hidden md:block">Mock Interview</span>
+                    Interview Prep
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
