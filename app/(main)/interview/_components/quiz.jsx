@@ -16,6 +16,7 @@ import { generateQuiz, saveQuizResult } from "@/actions/interview";
 import QuizResult from "./quiz-result";
 import useFetch from "@/hooks/use-fetch";
 import { BarLoader } from "react-spinners";
+import { ArrowRight } from "lucide-react";
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -101,29 +102,32 @@ export default function Quiz() {
 
   if (!quizData) {
     return (
-      <Card className="mx-2">
-        <CardHeader>
-          <CardTitle>Ready to test your knowledge?</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            This quiz contains 10 questions specific to your industry and
-            skills. Take your time and choose the best answer for each question.
-          </p>
-        </CardContent>
-        <CardFooter>
-          <Button onClick={generateQuizFn} className="w-full">
-            Start Quiz
-          </Button>
-        </CardFooter>
-      </Card>
+      <div className="space-y-4 mt-4">
+        <Card className="mx-4">
+          <CardHeader>
+            <CardTitle>Ready to test your knowledge?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">
+              This quiz contains 10 questions specific to your industry and
+              skills. Take your time and choose the best answer for each
+              question.
+            </p>
+          </CardContent>
+          <CardFooter>
+            <Button onClick={generateQuizFn} className="w-full">
+              Start Quiz
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
     );
   }
 
   const question = quizData[currentQuestion];
 
   return (
-    <Card className="mx-2">
+    <Card className="mx-4 mt-4">
       <CardHeader>
         <CardTitle>
           Question {currentQuestion + 1} of {quizData.length}
@@ -146,12 +150,14 @@ export default function Quiz() {
 
         {showExplanation && (
           <div className="mt-4 p-4 bg-muted rounded-lg">
-            <p className="font-medium">Explanation:</p>
-            <p className="text-muted-foreground">{question.explanation}</p>
+            <p className="font-medium text-sm">Explanation:</p>
+            <p className="text-muted-foreground text-sm">
+              {question.explanation}
+            </p>
           </div>
         )}
       </CardContent>
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex flex-col md:flex-row items-center justify-center gap-2 md:justify-between">
         {!showExplanation && (
           <Button
             onClick={() => setShowExplanation(true)}
@@ -170,7 +176,7 @@ export default function Quiz() {
             <BarLoader className="mt-4" width={"100%"} color="gray" />
           )}
           {currentQuestion < quizData.length - 1
-            ? "Next Question"
+            ? <ArrowRight /> && "Next"
             : "Finish Quiz"}
         </Button>
       </CardFooter>

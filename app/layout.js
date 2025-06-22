@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import CustomCursor from "@/components/CustomCursor";
+import Link from "next/link";
 
 const michroma = Michroma({
   subsets: ["latin", "latin-ext"],
@@ -14,7 +15,7 @@ const michroma = Michroma({
 
 export const metadata = {
   title: "Mārga(मार्ग)",
-  description: "Your Personal AI Career Coach",
+  description: "Your Personal AI Helper",
 };
 
 export default function RootLayout({ children }) {
@@ -39,8 +40,13 @@ export default function RootLayout({ children }) {
               <main className="min-h-screen pt-15">{children}</main>
               {/* {footer} */}
               <footer className="bg-muted/80 mt-10 py-8">
-                <div className="container mx-auto px-4 text-center text-gray-200">
-                  <p>© Copyrights. Terms and Conditions</p>
+                <div className="container mx-auto px-4 text-xs md:text-sm text-center text-gray-200">
+                  <p>
+                    © Copyrights.
+                    <Link href="/terms" className="hover:underline ml-1 mr-1">
+                      Terms and Conditions
+                    </Link>
+                  </p>
                 </div>
               </footer>
             </ThemeProvider>

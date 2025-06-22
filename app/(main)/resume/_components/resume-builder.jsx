@@ -147,14 +147,14 @@ export default function ResumeBuilder({ initialContent }) {
   };
 
   return (
-    <div data-color-mode="light" className="space-y-4">
+    <div data-color-mode="light" className="space-y-4 mx-4">
       <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-        <h1 className="font-bold gradient-title text-5xl md:text-6xl glitch-effect">
+        <h1 className="font-bold text-4xl md:text-6xl glitch-effect">
           <span className="glitch-text" data-text="Resume Builder">
             Resume Builder
           </span>
         </h1>
-        <div className="space-x-2">
+        <div className="space-x-2 mt-4">
           <Button
             variant="secondary"
             onClick={handleSubmit(onSubmit)}
@@ -188,6 +188,7 @@ export default function ResumeBuilder({ initialContent }) {
         </div>
       </div>
 
+      <hr className="bg-primary/95" />
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList>
           <TabsTrigger value="edit">Form</TabsTrigger>
@@ -195,17 +196,21 @@ export default function ResumeBuilder({ initialContent }) {
         </TabsList>
 
         <TabsContent value="edit">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-8 `${michroma.className}`"
+          >
             {/* Contact Information */}
             <div className="space-y-4">
               <h3 className="text-lg font-medium">Contact Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 border rounded-lg bg-muted/50">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium space-y-2">Email</label>
+                  <label className="text-xs font-medium space-y-2">Email</label>
                   <Input
                     {...register("contactInfo.email")}
                     type="email"
                     placeholder="your@email.com"
+                    className="mt-2 text-xs"
                     error={errors.contactInfo?.email}
                   />
                   {errors.contactInfo?.email && (
@@ -215,12 +220,13 @@ export default function ResumeBuilder({ initialContent }) {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium space-y-2">
+                  <label className="text-xs font-medium space-y-2">
                     Mobile Number
                   </label>
                   <Input
                     {...register("contactInfo.mobile")}
                     type="tel"
+                    className="mt-2 text-xs"
                     placeholder="+91 9316025577"
                   />
                   {errors.contactInfo?.mobile && (
@@ -230,12 +236,13 @@ export default function ResumeBuilder({ initialContent }) {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium space-y-2">
+                  <label className="text-xs font-medium space-y-2">
                     LinkedIn URL
                   </label>
                   <Input
                     {...register("contactInfo.linkedin")}
                     type="url"
+                    className="mt-2 text-xs"
                     placeholder="https://linkedin.com/in/your-profile"
                   />
                   {errors.contactInfo?.linkedin && (
@@ -245,12 +252,13 @@ export default function ResumeBuilder({ initialContent }) {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium space-y-2">
+                  <label className="text-xs font-medium space-y-2">
                     Twitter/X Profile
                   </label>
                   <Input
                     {...register("contactInfo.twitter")}
                     type="url"
+                    className="mt-2 text-xs"
                     placeholder="https://twitter.com/your-handle"
                   />
                   {errors.contactInfo?.twitter && (
@@ -271,7 +279,7 @@ export default function ResumeBuilder({ initialContent }) {
                 render={({ field }) => (
                   <Textarea
                     {...field}
-                    className="h-32"
+                    className="h-32 text-sm"
                     placeholder="Write a compelling professional summary..."
                     error={errors.summary}
                   />
@@ -291,7 +299,7 @@ export default function ResumeBuilder({ initialContent }) {
                 render={({ field }) => (
                   <Textarea
                     {...field}
-                    className="h-32"
+                    className="h-32 text-sm"
                     placeholder="List your key skills..."
                     error={errors.skills}
                   />

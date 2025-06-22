@@ -203,18 +203,18 @@ const HeroSection = () => {
 
         <div className="flex justify-center space-x-4">
           <Link href="/dashboard">
-            <Button size="lg" className="px-8">
+            <Button size="lg" className="px-4 md:px-8">
               Get Started
             </Button>
           </Link>
           <Button
             size="lg"
             variant="outline"
-            className="px-8"
+            className="px-4 md:px-8"
             onClick={handleWatchDemo}
             disabled={videoState === "loading"}
           >
-            <Play className="w-4 h-4 mr-2" />
+            <Play className="w-4 h-4 mr-2 hidden md:block" />
             Watch Demo
           </Button>
         </div>

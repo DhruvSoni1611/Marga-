@@ -58,11 +58,11 @@ export default function CoverLetterGenerator() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mx-4 mt-6">
       <Card>
         <CardHeader>
-          <CardTitle>Job Details</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-sm">Job Details</CardTitle>
+          <CardDescription className="text-xs">
             Provide information about the position you're applying for
           </CardDescription>
         </CardHeader>
@@ -71,23 +71,29 @@ export default function CoverLetterGenerator() {
             {/* Form fields remain the same */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="companyName">Company Name</Label>
+                <Label htmlFor="companyName" className="text-sm">
+                  Company
+                </Label>
                 <Input
                   id="companyName"
+                  className="text-xs"
                   placeholder="Enter company name"
                   {...register("companyName")}
                 />
                 {errors.companyName && (
-                  <p className="text-sm text-red-500">
+                  <p className="text-xs text-red-500">
                     {errors.companyName.message}
                   </p>
                 )}
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="jobTitle">Job Title</Label>
+                <Label htmlFor="jobTitle" className="text-sm">
+                  Job Title
+                </Label>
                 <Input
                   id="jobTitle"
+                  className="text-xs"
                   placeholder="Enter job title"
                   {...register("jobTitle")}
                 />
@@ -100,11 +106,13 @@ export default function CoverLetterGenerator() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="jobDescription">Job Description</Label>
+              <Label htmlFor="jobDescription" className="text-sm">
+                Job Description
+              </Label>
               <Textarea
                 id="jobDescription"
                 placeholder="Paste the job description here"
-                className="h-32"
+                className="h-32 text-sm"
                 {...register("jobDescription")}
               />
               {errors.jobDescription && (
@@ -114,7 +122,7 @@ export default function CoverLetterGenerator() {
               )}
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex justify-center md:justify-end">
               <Button type="submit" disabled={generating}>
                 {generating ? (
                   <>

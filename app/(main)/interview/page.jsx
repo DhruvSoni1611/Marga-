@@ -7,9 +7,9 @@ export default async function InterviewPrepPage() {
   const assessments = await getAssessments();
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-5 pt-5">
-        <h1 className="text-6xl font-bold glitch-effect space-y-6">
+    <div data-color-mode="light" className="space-y-4 mx-4">
+      <div className="flex items-center justify-between mb-5">
+        <h1 className="text-4xl md:text-6xl font-bold glitch-effect space-y-6">
           <span className="glitch-text" data-text="Interview Preparation">
             Interview Preparation
           </span>

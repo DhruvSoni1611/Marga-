@@ -8,14 +8,14 @@ export default async function CoverLetterPage() {
   const coverLetters = await getCoverLetters();
 
   return (
-    <div>
-      <div className="container mx-auto py-6">
-        <div className="flex flex-col md:flex-row gap-2 items-center justify-between space-y-10">
-          <h1 className="text-6xl font-bold glitch-effect">
-            <span className="glitch-text" data-text="My Cover Letters">
-              My Cover Letters
-            </span>
-          </h1>
+    <div data-color-mode="light" className="space-y-4 mx-4">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+        <h1 className="font-bold text-5xl md:text-6xl glitch-effect">
+          <span className="glitch-text" data-text="My Cover Letters">
+            My Cover Letters
+          </span>
+        </h1>
+        <div className="space-x-2 mt-4">
           <Link href="/cover-letter/new">
             <Button>
               <Plus className="h-4 w-4 mr-2" />
@@ -23,9 +23,10 @@ export default async function CoverLetterPage() {
             </Button>
           </Link>
         </div>
-        <hr className="bg-primary/95 mb-10" />
-        <CoverLetterList coverLetters={coverLetters} />
       </div>
+
+      <hr className="bg-primary/95" />
+      <CoverLetterList coverLetters={coverLetters} />
     </div>
   );
 }

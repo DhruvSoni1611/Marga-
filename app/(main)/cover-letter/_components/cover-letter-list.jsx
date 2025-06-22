@@ -42,8 +42,8 @@ export default function CoverLetterList({ coverLetters }) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>No Cover Letters Yet</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-l">No Cover Letters Yet</CardTitle>
+          <CardDescription className="text-xs mt-2">
             Create your first cover letter to get started
           </CardDescription>
         </CardHeader>
@@ -58,10 +58,10 @@ export default function CoverLetterList({ coverLetters }) {
           <CardHeader>
             <div className="flex items-start justify-between">
               <div>
-                <CardTitle className="text-xl gradient-title">
+                <CardTitle className="text-l">
                   {letter.jobTitle} at {letter.companyName}
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-xs mt-2">
                   Created {format(new Date(letter.createdAt), "PPP")}
                 </CardDescription>
               </div>

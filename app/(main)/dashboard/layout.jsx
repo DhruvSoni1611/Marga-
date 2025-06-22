@@ -3,14 +3,7 @@ import { Suspense } from "react";
 
 export default function Layout({ children }) {
   return (
-    <div className="px-5">
-      <div className="flex items-center justify-between mb-5">
-        <h1 className="text-6xl font-bold glitch-effect">
-          <span className="glitch-text" data-text="Industry Insights">
-            Industry Insights
-          </span>
-        </h1>
-      </div>
+    <div className="container mx-auto py-6">
       <Suspense
         fallback={<BarLoader className="mt-4" width={"100%"} color="gray" />}
       >
