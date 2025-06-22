@@ -10,7 +10,7 @@ export default async function CoverLetterPage() {
   return (
     <div data-color-mode="light" className="space-y-4 mx-4">
       <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-        <h1 className="font-bold text-5xl md:text-6xl glitch-effect">
+        <h1 className="font-bold text-4xl md:text-6xl glitch-effect">
           <span className="glitch-text" data-text="My Cover Letters">
             My Cover Letters
           </span>
