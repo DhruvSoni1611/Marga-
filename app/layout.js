@@ -48,6 +48,16 @@ export default function RootLayout({ children }) {
                     </Link>
                   </p>
                 </div>
+                <div className="container mx-auto px-4 text-xs md:text-sm text-center text-gray-200">
+                  <p>
+                    <Link
+                      href="https://dhruv-soni.netlify.app/"
+                      className="hover:underline ml-1 mr-1"
+                    >
+                      © Code By Dhruv
+                    </Link>
+                  </p>
+                </div>
               </footer>
             </ThemeProvider>
           </body>
